@@ -255,9 +255,9 @@ class Kubernetes(AgentCheck):
         tags = instance.get('tags', [])
         for ctrl, pods in controllers_map.iteritems():
             _tags = tags[:]  # copy base tags
-            _tags.append('kube_replication_controller:{}'.format(ctrl))
+            _tags.append('kube_replication_controller:{0}'.format(ctrl))
             # at the moment kubelet api reports data only for the current node,
             # we expect exactly on item in the set.
             for node_name in set(pods):
-                _tags.append('node_name:{}'.format(node_name))
+                _tags.append('node_name:{0}'.format(node_name))
             self.publish_gauge(self, NAMESPACE + '.pods.running', len(pods), _tags)
