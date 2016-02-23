@@ -138,6 +138,10 @@ class TestKubernetes(AgentCheckTest):
             (['kube_replication_controller:kube-ui-v1','kube_namespace:kube-system', 'pod_name:kube-system/kube-ui-v1-sv2sq'], [MEM, CPU, FS, NET, NET_ERRORS]),
             (['kube_replication_controller:propjoe', 'kube_namespace:default', 'pod_name:default/propjoe-lkc3l'], [MEM, CPU, FS, NET, NET_ERRORS]),
             (['kube_replication_controller:haproxy-6db79c7bbcac01601ac35bcdb18868b3', 'kube_namespace:default', 'pod_name:default/haproxy-6db79c7bbcac01601ac35bcdb18868b3-rr7la'], [MEM, CPU, FS, NET, NET_ERRORS]),
+            (['kube_replication_controller:l7-lb-controller', 'node_name:gke-cluster-1-8046fdfa-node-ld35'], [PODS]),
+            (['kube_replication_controller:redis-slave', 'node_name:gke-cluster-1-8046fdfa-node-ld35'], [PODS]),
+            (['kube_replication_controller:frontend', 'node_name:gke-cluster-1-8046fdfa-node-ld35'], [PODS]),
+            (['kube_replication_controller:heapster-v11', 'node_name:gke-cluster-1-8046fdfa-node-ld35'], [PODS]),
         ]
 
         for m, _type in METRICS:
